@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Tarefas</title>
+    <link rel="stylesheet" href="css/stylesGeral.css">
+    <link rel="stylesheet" href="css/stylesDetalhes.css">
+    <link rel="stylesheet" href="css/stylesEditarTarefa.css">
+
+
+</head>
+
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Dashboard</h2>
+            <nav>
+                <a href="#" class="active">Minhas Tarefas</a>
+                <a href="#">Criar Tarefa</a>
+                <a href="#">Configurações</a>
+                <a href="#">Sair</a>
+            </nav>
+            <footer>
+                <p>© 2025 Projeto Acadêmico</p>
+            </footer>
+        </aside>
+
+
+        <div class="container">
+            <header>
+                <h1>Editar Tarefa</h1>
+            </header>
+
+            <div class="card">
+                <form>
+                    <div class="form-group">
+                        <label for="titulo">Título da Tarefa</label>
+                        <input type="text" id="titulo" value="Revisar proposta do cliente">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descricao">Descrição</label>
+                        <textarea id="descricao"
+                            rows="5">Verificar os valores e o escopo do projeto antes de enviar para o cliente. Focar na Cláusula 5.3 sobre prazos de entrega.</textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="status">Status</label>
+                        <select id="status">
+                            <option>Pendente</option>
+                            <option>Em andamento</option>
+                            <option>Concluída</option>
+                        </select>
+                    </div>
+
+                    <div class="botoes">
+                        <button type="submit" class="btn-salvar">Salvar</button>
+                        <button type="button" class="btn-cancelar">Cancelar</button>
+                        <button type="button" class="btn-excluir">Excluir</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

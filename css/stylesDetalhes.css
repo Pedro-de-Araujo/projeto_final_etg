@@ -1,0 +1,244 @@
+:root {
+    --bg: #0f1724;
+    --card: #0b1220;
+    --muted: #9aa6b2;
+    --accent: #3b82f6;
+    --danger: #ef4444;
+    --surface: #111827;
+    --line: rgba(255, 255, 255, 0.06);
+    --orange: #f59e0b;
+}
+
+.value {
+    padding: 12px 14px;
+    border-radius: 6px;
+    background: transparent;
+    border: 1px solid var(--line);
+    color: #dbeafe;
+    font-size: 18px;
+}
+
+.task-title{
+    font-size: 20px
+}
+
+html,
+body {
+    height: 100%;
+    background: linear-gradient(180deg, #071028 0%, #0b1220 100%);
+    color: #e6eef8;
+}
+
+.dashboard {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+    background: #1e293b;
+    width: 250px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.sidebar nav a {
+    display: block;
+    color: #cbd5e1;
+    text-decoration: none;
+    margin-bottom: 15px;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+    background: #334155;
+    color: #fff;
+}
+
+.sidebar footer {
+    font-size: 14px;
+    color: #94a3b8;
+    margin-top: auto;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 24px;
+}
+
+
+
+.card {
+    padding: 2rem;
+    background-color: rgb(18, 18, 75);
+    border-radius: solid 2px green;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.badge.pendente {
+    background: linear-gradient(90deg, rgba(245, 158, 11, 0.15), rgba(245, 158, 11, 0.08));
+    color: var(--orange);
+    border: 1px solid rgba(245, 158, 11, 0.12);
+}
+
+.badge.concluido {
+    background: linear-gradient(90deg, rgba(34, 197, 94, 0.08), rgba(34, 197, 94, 0.04));
+    color: #34d399;
+    border: 1px solid rgba(52, 211, 153, 0.06);
+}
+
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+}
+
+.status{
+    font-size: 20px;
+}
+
+.label {
+    font-size: 20px;
+    color: var(--muted);
+    margin-bottom: 6px;
+}
+
+.value {
+    padding: 12px 14px;
+    border-radius: 6px;
+    background: transparent;
+    border: 1px solid var(--line);
+    color: #dbeafe;
+    font-size: 18px;
+}
+
+
+.description {
+    margin-top: 8px;
+    line-height: 1.6;
+    color: #cfe8ff;
+    background: transparent;
+    padding: 12px 14px;
+    border-radius: 6px;
+    border: 1px solid var(--line);
+    font-size: 18px;
+}
+
+
+.actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    border: 0;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(2, 6, 23, 0.6);
+}
+
+.btn.edit {
+    background: var(--accent);
+    color: white;
+    font-size: 18px;
+}
+
+.btn.delete {
+    background: var(--danger);
+    color: white;
+    font-size: 18px;
+}
+
+.btn.back {
+    background: #2563eb;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: 0 2px 6px rgba(2, 6, 23, 0.6);
+    display: inline-block;
+    transition: backgroundcolor 0.2s ease;
+    font-size: 16px;
+
+}
+
+.btn.back:hover {
+    background: #1d4ed8;
+}
+
+@media(min-width:720px) {
+    .row {
+        grid-template-columns: 1fr 280px;
+        align-items: start;
+    }
+
+    .main-col {
+        order: 1
+    }
+
+    .side-col {
+        order: 2
+    }
+}
+
+
+@media(max-width:480px) {
+    body {
+        padding: 16px
+    }
+
+    header h1 {
+        font-size: 20px
+    }
+
+    .card {
+        padding: 18px
+    }
+
+    .btn {
+        padding: 9px 12px
+    }
+}

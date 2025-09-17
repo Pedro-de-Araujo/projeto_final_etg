@@ -1,0 +1,176 @@
+/* Estilo geral */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0f172a; /* fundo escuro */
+    color: #f1f5f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container central */
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #e2e8f0;
+}
+
+.btn-cancelar-topo {
+    background-color: #3b82f6;
+    border: none;
+    padding: 8px 16px;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* Card */
+.card {
+    background-color: #1e293b;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+/* Formulário */
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+label {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input, textarea, select {
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #334155;
+    color: #f1f5f9;
+    font-size: 20px;
+}
+
+/* Botões */
+.botoes {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    font-size: 20px;
+}
+
+button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Botões individuais */
+.btn-salvar {
+    background-color: #22c55e;
+    color: white;
+}
+
+.btn-cancelar {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.btn-excluir {
+    background-color: #ef4444;
+    color: white;
+}
+
+
+/* ===== CELULARES PEQUENOS (até 368px) ===== */
+@media (max-width: 368px) {
+    /* Sidebar em coluna */
+    .sidebar {
+        flex-direction: column;
+        align-items: center;
+        padding: 6px;
+        width: 100%;
+    }
+
+    .sidebar nav {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 6px;
+    }
+
+    .sidebar nav a {
+        font-size: 13px;
+        padding: 6px 8px;
+        margin: 0;
+        text-align: center;
+        width: 100%; /* ocupa largura total no mobile */
+    }
+
+    /* Header compacto */
+    .header {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        text-align: center;
+    }
+
+    .header h1 {
+        font-size: 16px;
+    }
+
+    /* Botão Nova Tarefa ocupa a tela toda */
+    .nova-tarefa,
+    .btn-nova-tarefa {
+        font-size: 13px;
+        padding: 8px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Cards em coluna única */
+    .tasks {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .task-card {
+        padding: 10px;
+    }
+
+    .task-card h3 {
+        font-size: 14px;
+    }
+
+    .task-card p {
+        font-size: 12px;
+    }
+
+    /* Botões dentro dos cards menores */
+    .btn {
+        font-size: 12px;
+        padding: 8px;
+    }
+}

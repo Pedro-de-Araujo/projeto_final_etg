@@ -1,0 +1,183 @@
+/* ===== CONTAINER ===== */
+.container {
+    background: #1e293b;
+    padding: 50px;
+    border-radius: 12px;
+    width: 500px;
+    text-align: left;
+}
+
+/* ===== TÍTULO ===== */
+.container h1 {
+    margin-bottom: 25px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* ===== BOX DO FORM ===== */
+.form-box {
+  background: #1e293b;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-box h2 {
+  margin-bottom: 1rem;
+}
+
+/* ===== INPUTS ===== */
+label {
+  margin-bottom: 5px;
+  display: block;
+  font-size: 22px;
+}
+
+input {
+    width: 100%;
+    padding: 16px;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 20px;
+    background: #334155;
+    color: #fff;
+    font-size: 20px;
+}
+
+input::placeholder {
+    color: #cbd5e1;
+    font-size: 20px;
+}
+
+/* ===== BOTÃO ===== */
+.btn {
+  width: 100%;
+  padding: 16px;
+  background: #22c55e;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #16a34a;
+}
+
+/* ===== LINK LOGIN ===== */
+.login-link {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.login-link a {
+  color: #3b82f6;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 30px;
+  }
+
+  .container h1 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .form-box {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .form-box h2 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  label {
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .btn {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .login-link {
+    font-size: 14px;
+  }
+
+  .login-link a {
+    font-size: 14px;
+  }
+}
+
+/* ===== RESPONSIVIDADE EXTRA PARA CELULARES PEQUENOS ===== */
+@media (max-width: 368px) {
+  .container {
+    width: 95%;          /* ocupa quase toda largura */
+    padding: 20px;       /* menos padding */
+    border-radius: 8px;
+  }
+
+  .container h1 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .form-box {
+    padding: 15px;
+  }
+
+  .form-box h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  label {
+    font-size: 14px;
+  }
+
+  input {
+    font-size: 14px;
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+
+  input::placeholder {
+    font-size: 14px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .login-link {
+    font-size: 12px;
+  }
+
+  .login-link a {
+    font-size: 12px;
+  }
+}
