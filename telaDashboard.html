@@ -2,96 +2,56 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Minhas Tarefas</title>
-    <link rel="stylesheet" href="css/stylesGeral.css">
-    <link rel="stylesheet" href="css/stylesDashboard.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Minhas Tarefas</title>
+  <link rel="stylesheet" href="css/stylesGeral.css">
+  <link rel="stylesheet" href="css/stylesDashboard.css">
 </head>
 
 <body>
-    <div class="dashboard">
+  <div class="dashboard">
 
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <h2>Dashboard</h2>
-            <nav>
-                <a href="#" class="active">Minhas Tarefas</a>
-                <a href="#">Criar Tarefa</a>
-                <a href="#">Configurações</a>
-                <a href="#">Sair</a>
-            </nav>
-            <footer>
-                <p>© 2025 Projeto Acadêmico</p>
-            </footer>
-        </aside>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Dashboard</h2>
+      <nav>
+        <a href="telaDashboard.html" class="active">Minhas Tarefas</a>
+        <a href="telaCriarTarefa.html">Criar Tarefa</a>
+        <a href="index.html">Sair</a>
+      </nav>
+      <footer>
+        <p>© 2025 Projeto Acadêmico</p>
+      </footer>
+    </aside>
 
-        <!-- Conteúdo Principal -->
-        <main class="main-content">
-            <div class="header">
-                <h1>Minhas Tarefas</h1>
-                <button class="btn-nova-tarefa">Criar Tarefa</button>
-            </div>
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+      <div class="header">
+        <h1>Minhas Tarefas</h1>
+        <button class="btn-nova-tarefa" id="btnNovaTarefa">Criar Tarefa</button>
+      </div>
 
-            <div class="tasks">
-                <!-- Card 1 -->
-                <div class="task-card">
-                    <h3>Tarefa 1 <span class="icon">👁️</span></h3>
-                    <p>Descrição acessível e clara da primeira tarefa a ser realizada.</p>
-                    <div class="actions">
-                        <button class="btn editar">Editar</button>
-                        <button class="btn concluir">Concluir</button>
-                    </div>
-                </div>
-                <!-- Card 2 -->
-                <div class="task-card">
-                    <h3>Tarefa 2 <span class="icon">👁️</span></h3>
-                    <p>Descrição acessível e clara da segunda tarefa a ser realizada.</p>
-                    <div class="actions">
-                        <button class="btn editar">Editar</button>
-                        <button class="btn concluir">Concluir</button>
-                    </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="task-card">
-                    <h3>Tarefa 3 <span class="icon">👁️</span></h3>
-                    <p>Descrição acessível e clara da terceira tarefa a ser realizada.</p>
-                    <div class="actions">
-                        <button class="btn editar">Editar</button>
-                        <button class="btn concluir">Concluir</button>
-                    </div>
-                </div>
-                <!-- Card 4 -->
-                <div class="task-card">
-                    <h3>Tarefa 4 <span class="icon">👁️</span></h3>
-                    <p>Descrição acessível e clara da quarta tarefa a ser realizada.</p>
-                    <div class="actions">
-                        <button class="btn editar">Editar</button>
-                        <button class="btn concluir">Concluir</button>
-                    </div>
-                </div>
-                <!-- Card 5 -->
-                <div class="task-card">
-                    <h3>Tarefa 5 <span class="icon">👁️</span></h3>
-                    <p>Descrição acessível e clara da quinta tarefa a ser realizada.</p>
-                    <div class="actions">
-                        <button class="btn editar">Editar</button>
-                        <button class="btn concluir">Concluir</button>
-                    </div>
-                </div>
-                <!-- Card 6 -->
-                <div class="task-card">
-                    <h3>Tarefa 6 <span class="icon">👁️</span></h3>
-                    <p>Descrição acessível e clara da sexta tarefa a ser realizada.</p>
-                    <div class="actions">
-                        <button class="btn editar">Editar</button>
-                        <button class="btn concluir">Concluir</button>
-                    </div>
-                </div>
-            </div>
-        </main>
-    </div>
+      <div class="tasks" id="listaTarefas">
+        <!-- As tarefas aparecerão aqui -->
+      </div>
+    </main>
+  </div>
+
+  <script src="scripts.js"></script>
 </body>
+
+
+<script>
+  function excluirTarefa(id) {
+    const sucesso = confirm('Deseja realmente excluir esta tarefa?');
+    if (sucesso) {
+      alert('✅ Tarefa excluída com sucesso!');
+    } else {
+      alert('❌ Não foi possível excluir a tarefa.');
+    }
+  }
+</script>
+
 
 </html>

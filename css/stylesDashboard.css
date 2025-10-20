@@ -237,4 +237,25 @@ body {
         font-size: 12px;
         padding: 10px;
     }
+
+    .lista-tarefas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.tarefa-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 16px;
+  width: 250px;
+}
+
+.tarefa-card h3 {
+  margin-bottom: 8px;
+  color: #333;
+}
+
 }

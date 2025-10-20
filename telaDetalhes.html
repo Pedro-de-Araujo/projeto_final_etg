@@ -2,108 +2,103 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalhes - Minhas Tarefas</title>
-    <link rel="stylesheet" href="css/stylesGeral.css">
-    <link rel="stylesheet" href="css/stylesDetalhes.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes - Minhas Tarefas</title>
+  <link rel="stylesheet" href="css/stylesGeral.css">
+  <link rel="stylesheet" href="css/stylesDetalhes.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+    rel="stylesheet">
 </head>
-
 
 <body>
 
+  <div class="dashboard">
 
-    <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Dashboard</h2>
+      <nav>
+        <a href="telaDashboard.html" class="active">Minhas Tarefas</a>
+        <a href="telaCriarTarefa.html">Criar Tarefa</a>
+        <a href="index.html">Sair</a>
+      </nav>
+      <footer>
+        <p>© 2025 Projeto Acadêmico</p>
+      </footer>
+    </aside>
 
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <h2>Dashboard</h2>
-            <nav>
-                <a href="#" class="active">Minhas Tarefas</a>
-                <a href="#">Criar Tarefa</a>
-                <a href="#">Configurações</a>
-                <a href="#">Sair</a>
-            </nav>
-            <footer>
-                <p>© 2025 Projeto Acadêmico</p>
-            </footer>
-        </aside>
+    <!-- Conteúdo principal -->
+    <div class="wrapper">
+      <header>
+        <h1>Detalhes da Tarefa</h1>
+        <a class="btn back" href="telaDashboard.html">← Voltar</a>
+      </header>
 
+      <section class="card detalhes-tarefa">
+        <h2 id="titulo-tarefa">Título da tarefa</h2>
 
-
-
-
-        <div class="wrapper">
-            <header>
-                <h1>Detalhes da Tarefa</h1>
-                <a class="btn back" href="#">Voltar</a>
-            </header>
-
-
-            <section class="card" aria-labelledby="task-title">
-                <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;">
-                    <div style="min-width:0">
-                        <div id="task-title" class="task-title">Revisar proposta do cliente</div>
-                        <div class="meta">
-                            <div class="status"><span style="color:var(--muted);font-weight:600;">Status:</span> <span
-                                class="badge pendente">Pendente</span></div>
-                                <p>__________________________________________________</p><br>
-                            <div class="status"><span style="color:var(--muted);font-weight:600;">Criada em:</span>
-                                <span style="margin-left:6px;color:#cbd5e1;font-weight:700">24 de Agosto de 2025</span>
-                                <p>_______________________________________________________________________</p><br>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- optional icon or avatar area -->
-                </div>
-
-
-                <div class="row" style="margin-top:6px;">
-                    <div class="main-col">
-                        <div class="label">Descrição</div>
-                        <div class="description">Verificar os valores e o escopo do projeto antes de enviar para o
-                            cliente.
-                            Focar na cláusula 5.3 sobre prazos de entrega. É crucial garantir que todos os itens
-                            solicitados
-                            na última reunião estejam contemplados no documento final.</div>
-                    </div>
-
-
-                    <aside class="side-col">
-                        <div class="label">Observações rápidas</div>
-                        <div class="value">- Conferir anexos
-                            - Confirmar cronograma
-                            - Validar custos e impostos</div>
-                    </aside>
-                </div>
-
-
-                <div class="actions">
-                    <button class="btn edit" onclick="editar()">Editar</button>
-                    <button class="btn delete" onclick="excluir()">Excluir</button>
-                </div>
-            </section>
+        <div class="info">
+          <p><strong>Descrição:</strong> <span id="descricao-tarefa">Descrição detalhada da tarefa aparecerá aqui.</span></p>
+          <p><strong>Data de Criação:</strong> <span id="data-criacao">10/10/2025</span></p>
+          <p><strong>Data de Conclusão:</strong> <span id="data-conclusao">—</span></p>
+          <p><strong>Prioridade:</strong> <span id="prioridade-tarefa" class="badge alta">Alta</span></p>
+          <p><strong>Status:</strong> <span id="status-tarefa" class="badge pendente">Pendente</span></p>
         </div>
+
+        <div class="actions">
+          <button class="btn edit" onclick="editarTarefa()">✏️ Editar</button>
+          <button class="btn delete" onclick="excluirTarefa()">🗑️ Excluir</button>
+        </div>
+      </section>
     </div>
+  </div>
 
+  <script>
+    // ================== CARREGAR DETALHES ==================
+    document.addEventListener("DOMContentLoaded", () => {
+      const tarefa = JSON.parse(localStorage.getItem("tarefaSelecionada"));
 
+      if (tarefa) {
+        document.getElementById("titulo-tarefa").textContent = tarefa.titulo;
+        document.getElementById("descricao-tarefa").textContent = tarefa.descricao;
+        document.getElementById("data-criacao").textContent = tarefa.dataCriacao || "—";
+        document.getElementById("data-conclusao").textContent = tarefa.dataConclusao || "—";
+        document.getElementById("prioridade-tarefa").textContent = tarefa.prioridade;
+        document.getElementById("status-tarefa").textContent = tarefa.status;
 
+        // Aplica cor nas badges
+        const prioridade = document.getElementById("prioridade-tarefa");
+        prioridade.className = "badge " + tarefa.prioridade.toLowerCase();
 
+        const status = document.getElementById("status-tarefa");
+        status.className = "badge " + tarefa.status.toLowerCase().replace(" ", "-");
+      } else {
+        alert("Nenhuma tarefa selecionada!");
+        window.location.href = "telaDashboard.html";
+      }
+    });
 
+    // ================== FUNÇÕES DE AÇÃO ==================
+    function editarTarefa() {
+      alert("Função de edição em desenvolvimento!");
+    }
 
+    function excluirTarefa() {
+      if (confirm("Tem certeza que deseja excluir esta tarefa?")) {
+        alert("Tarefa excluída com sucesso!");
+        window.location.href = "telaDashboard.html";
+      }
+    }
 
-
-
-
-
-
-
-
-
+    card.addEventListener("click", () => {
+  localStorage.setItem("tarefaSelecionada", JSON.stringify(tarefa));
+  window.location.href = "telaDetalhes.html";
+});
+  </script>
 
 </body>
 
